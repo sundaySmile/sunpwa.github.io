@@ -23,7 +23,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => event.waitUtil(
 	Promise.all([
-		// 更新客户端
+		// 更新客户端, 控制未受控制的客户端
 		clients.claim(),
 		// 清理旧版本
 		caches.keys().then(cacheList => Promise.all(
